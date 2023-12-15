@@ -12,8 +12,11 @@ img1 = cv2.filter2D(img, -1, identity_kernel)
 img2 = cv2.filter2D(img, -1, Sharpening_Kernel)
 img3 = cv2.filter2D(img, -2, Sharpening_Kernel)
 img4=cv2.filter2D(img,-1,gaussien_kernel)
-titles = ['origine', 'filted1', 'filted2', 'filted3','filted4']
-images = [img, img1, img2, img3,img4]
+img5=cv2.blur(img,(1,1))
+img6=cv2.GaussianBlur(img,(1,1),2)
+img7=cv2.medianBlur(img,5)
+titles = ['origine','gaussienblur','medianblur']
+images = [img,img6,img7]
 
 # Use len(images) instead of a hardcoded value in the range
 for i in range(len(images)):
